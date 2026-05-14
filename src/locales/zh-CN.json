@@ -1,0 +1,28 @@
+{
+  "components": {},
+  "layouts": {
+    "systemName": "Lovrabet System",
+    "home": "首页",
+    "sdkDemo": "SDK 演示",
+    "promptManage": "Prompt 管理",
+    "list": "列表",
+    "create": "新建",
+    "pageExamples": "页面案例",
+    "workbench": "工作台",
+    "dashboard": "数据看板",
+    "dataScreen": "数据大屏",
+    "personalCenter": "个人中心",
+    "systemSettings": "系统设置",
+    "logout": "退出登录",
+    "showMenu": "显示菜单",
+    "admin": "管理员",
+    "ceoAudit": "CEO 审计",
+    "createPrompt": "新建 Prompt",
+    "promptDetail": "Prompt 详情",
+    "editPrompt": "编辑 Prompt",
+    "versionHistory": "版本历史",
+    "versionDetail": "版本详情",
+    "versionCompare": "版本对比"
+  },
+  "pages": {}
+}

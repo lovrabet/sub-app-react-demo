@@ -1,3 +1,4 @@
+import { $i18n } from "../i18n";
 import React, { useState } from "react";
 import { isInIcestark } from "@ice/stark-app";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
@@ -27,19 +28,55 @@ const { Header, Sider, Content } = Layout;
 
 // 路由配置，用于生成面包屑
 const routeConfig = [
-  { path: "/", title: "首页" },
-  { path: "/workbench", title: "工作台" },
-  { path: "/dashboard", title: "数据看板" },
-  { path: "/sdk-demo", title: "SDK 演示" },
-  { path: "/data-screen", title: "数据大屏" },
-  { path: "/ceo-audit", title: "CEO 审计" },
-  { path: "/prompt-manage", title: "Prompt 管理" },
-  { path: "/prompt-manage/create", title: "新建 Prompt" },
-  { path: "/prompt-manage/detail", title: "Prompt 详情" },
-  { path: "/prompt-manage/edit", title: "编辑 Prompt" },
-  { path: "/prompt-manage/version-list", title: "版本历史" },
-  { path: "/prompt-manage/version-detail", title: "版本详情" },
-  { path: "/prompt-manage/version-compare", title: "版本对比" },
+  { path: "/", title: $i18n.t("layouts.home", "首页") },
+  {
+    path: "/workbench",
+    title: $i18n.t("layouts.workbench", "工作台"),
+  },
+  {
+    path: "/dashboard",
+    title: $i18n.t("layouts.dashboard", "数据看板"),
+  },
+  {
+    path: "/sdk-demo",
+    title: $i18n.t("layouts.sdkDemo", "SDK 演示"),
+  },
+  {
+    path: "/data-screen",
+    title: $i18n.t("layouts.dataScreen", "数据大屏"),
+  },
+  {
+    path: "/ceo-audit",
+    title: $i18n.t("layouts.ceoAudit", "CEO 审计"),
+  },
+  {
+    path: "/prompt-manage",
+    title: $i18n.t("layouts.promptManage", "Prompt 管理"),
+  },
+  {
+    path: "/prompt-manage/create",
+    title: $i18n.t("layouts.createPrompt", "新建 Prompt"),
+  },
+  {
+    path: "/prompt-manage/detail",
+    title: $i18n.t("layouts.promptDetail", "Prompt 详情"),
+  },
+  {
+    path: "/prompt-manage/edit",
+    title: $i18n.t("layouts.editPrompt", "编辑 Prompt"),
+  },
+  {
+    path: "/prompt-manage/version-list",
+    title: $i18n.t("layouts.versionHistory", "版本历史"),
+  },
+  {
+    path: "/prompt-manage/version-detail",
+    title: $i18n.t("layouts.versionDetail", "版本详情"),
+  },
+  {
+    path: "/prompt-manage/version-compare",
+    title: $i18n.t("layouts.versionCompare", "版本对比"),
+  },
 ];
 
 const MainLayout: React.FC = () => {
@@ -55,47 +92,47 @@ const MainLayout: React.FC = () => {
     {
       key: "/",
       icon: <HomeOutlined />,
-      label: "首页",
+      label: $i18n.t("layouts.home", "首页"),
     },
     {
       key: "/sdk-demo",
       icon: <ApiOutlined />,
-      label: "SDK 演示",
+      label: $i18n.t("layouts.sdkDemo", "SDK 演示"),
     },
     {
       key: "prompt-manage-group",
       icon: <AuditOutlined />,
-      label: "Prompt 管理",
+      label: $i18n.t("layouts.promptManage", "Prompt 管理"),
       children: [
         {
           key: "/prompt-manage",
-          label: "列表",
+          label: $i18n.t("layouts.list", "列表"),
         },
         {
           key: "/prompt-manage/create",
-          label: "新建",
+          label: $i18n.t("layouts.create", "新建"),
         },
       ],
     },
     {
       key: "page-examples",
       icon: <FileTextOutlined />,
-      label: "页面案例",
+      label: $i18n.t("layouts.pageExamples", "页面案例"),
       children: [
         {
           key: "/workbench",
           icon: <DashboardOutlined />,
-          label: "工作台",
+          label: $i18n.t("layouts.workbench", "工作台"),
         },
         {
           key: "/dashboard",
           icon: <DashboardOutlined />,
-          label: "数据看板",
+          label: $i18n.t("layouts.dashboard", "数据看板"),
         },
         {
           key: "/data-screen",
           icon: <BarChartOutlined />,
-          label: "数据大屏",
+          label: $i18n.t("layouts.dataScreen", "数据大屏"),
         },
       ],
     },
@@ -124,7 +161,7 @@ const MainLayout: React.FC = () => {
 
   // 生成面包屑
   const getBreadcrumbItems = () => {
-    const items: any[] = [{ title: "首页" }];
+    const items: any[] = [{ title: $i18n.t("layouts.home", "首页") }];
     const currentRoute = routeConfig.find((r) => r.path === location.pathname);
     if (currentRoute && currentRoute.path !== "/") {
       items.push({ title: currentRoute.title });
@@ -136,19 +173,19 @@ const MainLayout: React.FC = () => {
   const userMenuItems: MenuProps["items"] = [
     {
       key: "profile",
-      label: "个人中心",
+      label: $i18n.t("layouts.personalCenter", "个人中心"),
       icon: <UserOutlined />,
     },
     {
       key: "settings",
-      label: "系统设置",
+      label: $i18n.t("layouts.systemSettings", "系统设置"),
     },
     {
       type: "divider",
     },
     {
       key: "logout",
-      label: "退出登录",
+      label: $i18n.t("layouts.logout", "退出登录"),
       danger: true,
     },
   ];
@@ -193,7 +230,7 @@ const MainLayout: React.FC = () => {
                     fontWeight: 600,
                   }}
                 >
-                  Lovrabet System
+                  {$i18n.t("layouts.systemName", "Lovrabet System")}
                 </span>
               </div>
             ) : (
@@ -262,7 +299,7 @@ const MainLayout: React.FC = () => {
                   height: 32,
                 }}
               >
-                显示菜单
+                {$i18n.t("layouts.showMenu", "显示菜单")}
               </Button>
             )}
             {/* 面包屑导航 */}
@@ -309,7 +346,9 @@ const MainLayout: React.FC = () => {
                   icon={<UserOutlined />}
                   style={{ background: "#1890ff" }}
                 />
-                <span style={{ fontSize: 14 }}>管理员</span>
+                <span style={{ fontSize: 14 }}>
+                  {$i18n.t("layouts.admin", "管理员")}
+                </span>
               </Space>
             </Dropdown>
           </div>

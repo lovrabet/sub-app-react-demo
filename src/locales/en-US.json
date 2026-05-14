@@ -1,0 +1,28 @@
+{
+  "components": {},
+  "layouts": {
+    "systemName": "Lovrabet System",
+    "home": "Home",
+    "sdkDemo": "SDK Demo",
+    "promptManage": "Prompt Management",
+    "list": "List",
+    "create": "Create",
+    "pageExamples": "Page Examples",
+    "workbench": "Workbench",
+    "dashboard": "Dashboard",
+    "dataScreen": "Data Screen",
+    "personalCenter": "Profile",
+    "systemSettings": "Settings",
+    "logout": "Logout",
+    "showMenu": "Show Menu",
+    "admin": "Admin",
+    "ceoAudit": "CEO Audit",
+    "createPrompt": "Create Prompt",
+    "promptDetail": "Prompt Detail",
+    "editPrompt": "Edit Prompt",
+    "versionHistory": "Version History",
+    "versionDetail": "Version Detail",
+    "versionCompare": "Version Compare"
+  },
+  "pages": {}
+}
